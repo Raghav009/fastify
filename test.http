@@ -32,5 +32,8 @@ POST http://localhost:3001/signup
 GET http://localhost:3001/protected
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpYXQiOjE2ODkyODQ4Mzl9.BVUpNZUnF3MroxPujlIJ0gtJdvenB9sTCCnOd0xIrrM
 
-### Get Alerts from DB
+### Get Alerts from Mysql DB 
 GET http://localhost:3001/alerts
+
+### Get Alerts from Sql Server DB
+GET http://localhost:3001/devices

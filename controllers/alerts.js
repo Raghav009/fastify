@@ -1,4 +1,4 @@
-const { getAlerts } = require('../db/alerts')
+const { getAlerts, getDevices } = require('../db/alerts')
 
 const getItems = async (req, reply) => {
     req.log.info("Get Alerts")
@@ -6,4 +6,10 @@ const getItems = async (req, reply) => {
     reply.send(items)
 }
 
-module.exports = { getItems }
+const getDevicesList = async(req, reply) =>{
+    req.log.info("Get Devices")
+    let items = await getDevices()
+    reply.send(items)
+}
+
+module.exports = { getItems, getDevicesList }

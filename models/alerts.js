@@ -1,4 +1,4 @@
-const { getItems } = require('../controllers/alerts')
+const { getItems, getDevicesList } = require('../controllers/alerts')
 
 // Item schema
 const Alert = {
@@ -16,6 +16,19 @@ const Alert = {
     },
 }
 
+const Device = {
+    type:'object',
+    properties:{
+        Id:{ type: 'number' },
+        Name: { type: 'string' },
+        Parmeters: { type: 'string' },
+        LowerThreshold: { type: 'number' },
+        UpperThreshold: { type: 'number' },
+        Device_Id: { type: 'number' },
+        Plant_Id: { type: 'number' },
+    }
+}
+
 // Options for get all items
 const getItemsOpts = {
     schema: {
@@ -29,4 +42,16 @@ const getItemsOpts = {
     handler: getItems,
 }
 
-module.exports = { getItemsOpts }
+const getDeviceOpts ={
+    schema: {
+        response: {
+            200: {
+                type: 'array',
+                items: Device,
+            },
+        },
+    },
+    handler: getDevicesList,
+}
+
+module.exports = { getItemsOpts, getDeviceOpts }
