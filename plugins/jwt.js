@@ -14,7 +14,25 @@ module.exports = fp(async function (fastify, opts) {
             reply.send(err)
         }
     })
+    
+    fastify.addHook('preHandler', async (request, reply) => {
+        // Array of routes where token verification is excluded
+        const excludedRoutes = ['/register', '/login'];
 
+        // Check if the current route is in the excluded routes
+        if (excludedRoutes.includes(request.routerPath)) {
+            // Skip token verification for excluded routes
+            return;
+        }
+
+        try {
+            // Verify the JWT token
+            await request.jwtVerify();
+        } catch (err) {
+            // Token verification failed
+            reply.code(401).send({ message: 'Invalid token' });
+        }
+    })
     // fastify.addHook('onRequest', (request) => request.jwtVerify())
     // if we need to exclude for few request with out auth then we have to register the routes seperatly 
 })
