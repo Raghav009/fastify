@@ -25,6 +25,11 @@ module.exports = fp(async function (fastify, opts) {
             return;
         }
 
+        if(request.routerPath.includes('/doc')){
+            // Skip token verification for swagger ui
+            return;
+        }
+
         try {
             // Verify the JWT token
             await request.jwtVerify();

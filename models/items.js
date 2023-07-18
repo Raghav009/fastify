@@ -33,6 +33,13 @@ const getItemOpts = {
         response: {
             200: Item,
         },
+        params: {
+            type: 'object',
+            properties: {
+                id: { type: 'string' },
+            },
+            required: ['id']
+        }
     },
     handler: getItem,
 }
@@ -63,6 +70,13 @@ const deleteItemOpts = {
                 },
             },
         },
+        params: {
+            type: 'object',
+            properties: {
+                id: { type: 'string' },
+            },
+            required: ['id']
+        }
     },
     handler: deleteItem,
 }
@@ -71,6 +85,20 @@ const updateItemOpts = {
     schema: {
         response: {
             200: Item,
+        },
+        params: {
+            type: 'object',
+            properties: {
+                id: { type: 'string' },
+            },
+            required: ['id']
+        },
+        body: {
+            type: 'object',
+            required: ['name'],
+            properties: {
+                name: { type: 'string' },
+            },
         },
     },
     handler: updateItem,
