@@ -21,3 +21,12 @@ Run the test cases.
 ## Learn More
 
 To learn Fastify, check out the [Fastify documentation](https://www.fastify.io/docs/latest/).
+
+## Git Reference
+git init <br />
+git config user.name "user_name" <br />
+git config user.email user@email.com <br />
+git config credential.username 'user_name' <br />
+git remote add origin https://github.com/user_name/project_name.git <br />
+git branch -M main <br />
+git push -u origin main <br />
