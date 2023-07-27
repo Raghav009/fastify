@@ -30,3 +30,15 @@ git config credential.username 'user_name' <br />
 git remote add origin https://github.com/user_name/project_name.git <br />
 git branch -M main <br />
 git push -u origin main <br />
+
+## Docker Steps
+create docker file <br />
+docker build -t raghav/nodejs:latest . <br />
+docker container ls <br />
+docker container run -d -p 3000:3000 raghav/nodejs:latest <br />
+docker container stop 4b4 <br />
+
+docker login <br />
+docker push raghav/nodejs:0.0.1.RELEASE <br />
+
+docker pull raghav/nodejs:0.0.1.RELEASE <br />
