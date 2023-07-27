@@ -1,10 +1,10 @@
 version: "3"
 services:
   node-app:
-    image: node:latest
+    image: node:18
     working_dir: /app
     volumes:
       - .:/app
     ports:
       - "3000:3000"
-    command: npm start
+    command: bash -c "npm install && npm start"
