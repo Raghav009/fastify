@@ -42,3 +42,11 @@ docker login <br />
 docker push raghav/nodejs:0.0.1.RELEASE <br />
 
 docker pull raghav/nodejs:0.0.1.RELEASE <br />
+
+## Docker Compose
+docker-compose up: Create and start containers defined in the docker-compose.yml file. <br />
+docker-compose down: Stop and remove containers, networks, and volumes defined in the docker-compose.yml file. <br />
+docker-compose build: Build or rebuild services defined in the docker-compose.yml file. <br />
+docker-compose ps: List running containers defined in the docker-compose.yml file. <br />
+docker-compose logs: View the logs of containers defined in the docker-compose.yml file. <br />
+docker-compose exec: Run a command inside a running container. <br />
